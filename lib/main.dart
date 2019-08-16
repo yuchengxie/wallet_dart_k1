@@ -22,16 +22,23 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
             supportedLocales: const [Locale('en')],
             home: Tabs(),
-            initialRoute: '/blue',
+            initialRoute: '/',
             onGenerateRoute: onGenerateRoute,
             theme: ThemeData(
-              brightness: stateModel.walletTheme.brightness,
-              appBarTheme: AppBarTheme(
-                  // color: stateModel.walletTheme.appBarbackColor,
-                  color: stateModel.walletTheme.brightness == Brightness.dark
-                      ? Colors.black12
-                      : Colors.cyan),
-            ),
+                splashColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+                buttonTheme: ButtonThemeData(
+                  highlightColor: Colors.transparent,
+                  splashColor: Colors.transparent,
+                )),
+            // theme: ThemeData(
+            //   brightness: stateModel.walletTheme.brightness,
+            //   appBarTheme: AppBarTheme(
+            //       // color: stateModel.walletTheme.appBarbackColor,
+            //       color: stateModel.walletTheme.brightness == Brightness.dark
+            //           ? Colors.black12
+            //           : Colors.cyan),
+            // ),
           );
         },
       ),

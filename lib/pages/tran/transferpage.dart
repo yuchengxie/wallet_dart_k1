@@ -58,6 +58,7 @@ class _TransferPageState extends State<TransferPage> {
       child: Scaffold(
         appBar: AppBar(
           title: Text('NBC-转账'),
+          backgroundColor: Colors.black,
           actions: <Widget>[
             IconButton(
               icon: Icon(Icons.camera_alt),
@@ -281,9 +282,9 @@ class _TransferComponentState extends State<TransferComponent> {
                   child: Container(
                     height: 40,
                     child: RaisedButton(
-                      color: Colors.cyan,
+                      color: Colors.black,
                       textColor: Colors.white,
-                      child: Text('交 易'),
+                      child: Text('交易'),
                       onPressed: _isDisableButton ? _transferAction : null,
                     ),
                   ),

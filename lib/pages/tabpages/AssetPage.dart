@@ -48,23 +48,26 @@ class _AssetPageState extends State<AssetPage> {
   Widget build(BuildContext context) {
     // StateModel _stateModel=Provider.of<StateModel>(context);
     return Scaffold(
-      appBar: AppBar(title: Text('资产'),),
-        body: Column(
-      children: <Widget>[
-        Container(
-          height: 220,
-          child: Row(
-              children: <Widget>[
-                // Expanded(
-                //   child:Image.network('https://www.itying.com/images/flutter/1.png',
-                //   fit: BoxFit.cover,)
-                // )
-              ],
-              ),
+        appBar: AppBar(
+          title: Text('资产'),
+          backgroundColor: Colors.black,
         ),
-        ListTileCoin(),
-      ],
-    ));
+        body: Column(
+          children: <Widget>[
+            Container(
+              height: 220,
+              child: Row(
+                children: <Widget>[
+                  // Expanded(
+                  //   child:Image.network('https://www.itying.com/images/flutter/1.png',
+                  //   fit: BoxFit.cover,)
+                  // )
+                ],
+              ),
+            ),
+            ListTileCoin(),
+          ],
+        ));
   }
 }
 
@@ -87,14 +90,18 @@ class ListTileCoin extends StatelessWidget {
     return Column(
       children: <Widget>[
         ListTile(
-          leading: CircleAvatar(
-            child: Image.asset('images/a.jpeg'),
-          ),
+          // leading: CircleAvatar(
+          //   child: Image.asset('images/a.jpeg'),
+            
+          // ),
+          leading: Icon(Icons.cake,color: Colors.black,),
           title: Text(
             'NBC',
+            style: TextStyle(color: Colors.black),
           ),
           subtitle: Text(
             '= 0.0000 RMB',
+            style: TextStyle(color: Colors.black),
           ),
           onTap: () {
             Navigator.pushNamed(context, '/assetRecordPage');

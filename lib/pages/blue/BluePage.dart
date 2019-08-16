@@ -95,7 +95,7 @@ class _BluePageState extends State<BluePage> {
     }
     this._showToast("pubkeyhash:$s");
   }
-  
+
   _minerRecovery() async {
     String s = await minerRecovery();
     print('复位返回:$s');
@@ -115,21 +115,21 @@ class _BluePageState extends State<BluePage> {
   void _showToast(String msg, {int duration, int gravity}) {
     Toast.show(msg, context, duration: 2, gravity: Toast.BOTTOM);
   }
-  
+
   @override
   void initState() {
     super.initState();
     bleNameController = TextEditingController();
     pinCodeController = TextEditingController();
     pinCodeVerifyController = TextEditingController();
-    bleNameController.text = "BLESIM313131";
+    bleNameController.text = "BLESIM323232";
     pinCodeController.text = "123456";
     pinCodeVerifyController.text = "000000";
     this._connectState = '蓝牙SIM卡';
     print('state:${this._connectState}');
     eventChannel.receiveBroadcastStream().listen(_onEvent, onError: _onError);
   }
-
+  
   _onEvent(Object event) {
     // print('event: $event');
     Map dic = event;
@@ -176,6 +176,7 @@ class _BluePageState extends State<BluePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(this._connectState),
+        backgroundColor: Colors.black,
       ),
       body: Container(
         margin: EdgeInsets.all(10),
@@ -229,6 +230,9 @@ class _BluePageState extends State<BluePage> {
                 this._selectApp(appSelectID);
               },
             ),
+            SizedBox(
+              height: 10,
+            ),
             // TextField(
             //   controller: pinCodeVerifyController,
             //   decoration: InputDecoration(
@@ -248,6 +252,9 @@ class _BluePageState extends State<BluePage> {
               onPressed: () {
                 this._sign("123");
               },
+            ),
+            SizedBox(
+              height: 10,
             ),
             MOutlineButton(
               title: "复位",
@@ -289,21 +296,33 @@ class _MOutlineButtonState extends State<MOutlineButton> {
   _MOutlineButtonState(this.title, this.onPressed);
   @override
   Widget build(BuildContext context) {
-    StateModel _stateModel = Provider.of<StateModel>(context);
-    Color _color = _stateModel.walletTheme.brightness == Brightness.dark
-        ? Colors.white
-        : Colors.grey[600];
+    // StateModel _stateModel = Provider.of<StateModel>(context);
+    // Color _color = _stateModel.walletTheme.brightness == Brightness.dark
+    //     ? Colors.white
+    //     : Colors.grey[600];
     return Container(
       child: Row(
         children: <Widget>[
           Expanded(
-            child: OutlineButton(
-              child: Text(this.title),
-              highlightedBorderColor: Colors.cyan,
-              borderSide: BorderSide(width: 1, color: _color),
-              onPressed: this.onPressed,
+            child: Container(
+              height: 40,
+              child: RaisedButton(
+                color: Colors.black,
+                textColor: Colors.white,
+                child: Text(this.title),
+                onPressed: this.onPressed,
+                splashColor: Colors.transparent,
+              ),
             ),
-          )
+          ),
+          // Expanded(
+          //   // child: OutlineButton(
+          //   //   child: Text(this.title,style:TextStyle(color: Colors.black)),
+          //   //   // highlightedBorderColor: Colors.,
+          //   //   borderSide: BorderSide(width: 1, color: Colors.black),
+          //   //   onPressed: this.onPressed,
+          //   // ),
+          // )
         ],
       ),
     );

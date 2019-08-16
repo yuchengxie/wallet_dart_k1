@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' as prefix0;
 import 'package:provider/provider.dart';
 import '../../api/provider/stateModel.dart';
 
@@ -9,31 +10,33 @@ class PersonalPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    StateModel _stateModel = Provider.of<StateModel>(context);
-    Color headcolor = _stateModel.walletTheme.brightness == Brightness.dark
-        ? null
-        : Colors.cyan;
+    // StateModel _stateModel = Provider.of<StateModel>(context);
+    // Color headcolor = _stateModel.walletTheme.brightness == Brightness.dark
+    //     ? null
+    //     : Colors.cyan;
+    // Color headcolor = Colors.white;
     return Scaffold(
       appBar: AppBar(
         title: Text('我'),
         elevation: 0.0,
+        backgroundColor: Colors.black,
       ),
-      drawer: Drawer(
-          child: Column(
-        children: <Widget>[
-          UserAccountsDrawerHeader(
-            currentAccountPicture: CircleAvatar(backgroundColor: Colors.cyan),
-            accountEmail: Text('xxxxxxx@163.com'),
-            accountName: Text('hzf'),
-          )
-        ],
-      )),
+      // drawer: Drawer(
+      //     child: Column(
+      //   children: <Widget>[
+      //     UserAccountsDrawerHeader(
+      //       currentAccountPicture: CircleAvatar(backgroundColor: Colors.cyan),
+      //       accountEmail: Text('xxxxxxx@163.com'),
+      //       accountName: Text('hzf'),
+      //     )
+      //   ],
+      // )),
       body: Column(
         children: <Widget>[
           Container(
             height: 200,
             // margin: EdgeInsets.fromLTRB(0, 20, 0, 0),
-            color: headcolor,
+            // color: headcolor,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
@@ -50,7 +53,7 @@ class PersonalPage extends StatelessWidget {
                           icon: Icon(
                             Icons.folder_shared,
                             size: 36,
-                            color: Colors.white,
+                            color: Colors.black,
                           ),
                           onPressed: () {},
                         ),
@@ -59,7 +62,7 @@ class PersonalPage extends StatelessWidget {
                         ),
                         Text(
                           '管理钱包',
-                          style: TextStyle(color: Colors.white),
+                          style: TextStyle(color: Colors.black),
                         ),
                       ],
                     ),
@@ -70,7 +73,7 @@ class PersonalPage extends StatelessWidget {
                           icon: Icon(
                             Icons.alarm,
                             size: 36,
-                            color: Colors.white,
+                            color: Colors.black,
                           ),
                           onPressed: () {},
                         ),
@@ -79,7 +82,7 @@ class PersonalPage extends StatelessWidget {
                         ),
                         Text(
                           '交易记录',
-                          style: TextStyle(color: Colors.white),
+                          style: TextStyle(color: Colors.black),
                         ),
                       ],
                     ),
@@ -97,18 +100,18 @@ class PersonalPage extends StatelessWidget {
           Divider(
             height: 1,
           ),
-          ListTile(
-            leading: Icon(Icons.theaters, size: 30),
-            title: Text('切换主题'),
-            subtitle: Text('切换主题，夜间模式，白天模式'),
-            trailing: Icon(Icons.keyboard_arrow_right),
-            onTap: () {
-              this.changeTheme(_stateModel);
-            },
-          ),
-          Divider(
-            height: 1,
-          ),
+          // ListTile(
+          //   leading: Icon(Icons.theaters, size: 30),
+          //   title: Text('切换主题'),
+          //   subtitle: Text('切换主题，夜间模式，白天模式'),
+          //   trailing: Icon(Icons.keyboard_arrow_right),
+          //   onTap: () {
+          //     // this.changeTheme(_stateModel);
+          //   },
+          // ),
+          // Divider(
+          //   height: 1,
+          // ),
           // ListTile(
           //   leading: Icon(Icons.system_update_alt, size: 30),
           //   title: Text('系统设置'),
@@ -119,10 +122,10 @@ class PersonalPage extends StatelessWidget {
           //   height: 1,
           // ),
           ListTile(
-            leading: Icon(Icons.bluetooth, size: 25),
-            title: Text('蓝牙功能'),
-            subtitle: Text('蓝牙协议，数据通讯'),
-            trailing: Icon(Icons.keyboard_arrow_right),
+            // leading: Icon(Icons.bluetooth, size: 25,color: Colors.black,),
+            title: Text('蓝牙连接',style: TextStyle(color: Colors.black),),
+            // subtitle: Text('蓝牙协议，数据通讯'),
+            // trailing: Icon(Icons.keyboard_arrow_right),
             onTap: () {
               Navigator.pushNamed(context, '/blue');
             },
@@ -130,11 +133,11 @@ class PersonalPage extends StatelessWidget {
           Divider(
             height: 1,
           ),
-           ListTile(
-            leading: Icon(Icons.pan_tool, size: 25),
-            title: Text('蓝牙挖矿'),
-            subtitle: Text('SIM卡蓝牙挖矿，请保持蓝牙连接'),
-            trailing: Icon(Icons.keyboard_arrow_right),
+          ListTile(
+            // leading: Icon(Icons.pan_tool, size: 25,color: Colors.black,),
+            title: Text('挖矿',style: TextStyle(color: Colors.black),),
+            // subtitle: Text('SIM卡蓝牙挖矿，请保持蓝牙连接'),
+            // trailing: Icon(Icons.keyboard_arrow_right),
             onTap: () {
               Navigator.pushNamed(context, '/miner');
             },
@@ -157,14 +160,14 @@ class PersonalPage extends StatelessWidget {
     );
   }
 
-  void changeTheme(StateModel model) {
-    WalletTheme _theme = WalletTheme();
-    _theme.brightness = model.walletTheme.brightness == Brightness.light
-        ? Brightness.dark
-        : Brightness.light;
-    // _theme.appBarbackColor = model.walletTheme.appBarbackColor == Colors.cyan
-    //     ? Colors.black12
-    //     : Colors.cyan;
-    model.updateTheme(_theme);
-  }
+  // void changeTheme(StateModel model) {
+  //   WalletTheme _theme = WalletTheme();
+  //   _theme.brightness = model.walletTheme.brightness == Brightness.light
+  //       ? Brightness.dark
+  //       : Brightness.light;
+  //   // _theme.appBarbackColor = model.walletTheme.appBarbackColor == Colors.cyan
+  //   //     ? Colors.black12
+  //   //     : Colors.cyan;
+  //   model.updateTheme(_theme);
+  // }
 }

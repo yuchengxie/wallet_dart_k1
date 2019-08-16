@@ -13,7 +13,8 @@ class _MinerPageState extends State<MinerPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('123'),
+        title: Text('挖矿'),
+        backgroundColor: Colors.black,
       ),
       body: Container(
         margin: EdgeInsets.all(16),
@@ -25,6 +26,8 @@ class _MinerPageState extends State<MinerPage> {
                 Expanded(
                   child: RaisedButton(
                     child: Text('开始挖矿'),
+                    textColor: Colors.white,
+                    color: Colors.black,
                     onPressed: () {
                       startMiner();
                       print('start miner');
@@ -34,15 +37,16 @@ class _MinerPageState extends State<MinerPage> {
               ],
             ),
             SizedBox(
-              height: 20,
+              height: 30,
             ),
             Row(
               children: <Widget>[
                 Expanded(
                   child: RaisedButton(
                     child: Text('停止挖矿'),
+                    textColor: Colors.white,
+                    color: Colors.black,
                     onPressed: () {
-                      // startMiner();
                       stopMiner();
                       print('stop miner');
                     },

@@ -7,11 +7,13 @@ import 'package:nbc_wallet/pages/tran/transferpage.dart';
 import 'package:nbc_wallet/pages/tran/txndeatails.dart';
 import 'package:nbc_wallet/pages/tabs.dart';
 import 'pages/miner/MinerPage.dart';
+import 'pages/tabpages/AssetPage.dart';
 import 'pages/tabpages/PersonalPage.dart';
 
 final _routes = {
   '/': (context) => Tabs(),
   '/assetRecordPage': (context) => AssetRecordPage(),
+  '/assetPage': (context) => AssetPage(),
   '/transferPage': (context) => TransferPage(),
   '/txnDetailsPage': (context) => TxnDetailsPage(),
   '/qrcode': (context) => QRCodePage(),

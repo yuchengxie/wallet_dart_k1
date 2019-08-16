@@ -12,21 +12,31 @@ class Tabs extends StatefulWidget {
 
 class _TabsState extends State<Tabs> {
   int _currentIndex = 0;
-  List _list = [AssetPage(), MarketPage(), FindPage(), PersonalPage()];
+  // List _list = [AssetPage(), MarketPage(), FindPage(), PersonalPage()];
+  List _list = [AssetPage(), PersonalPage()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: _list[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
+        elevation:0,
+        selectedFontSize: 13,
+        unselectedFontSize: 13,
         type: BottomNavigationBarType.fixed,
         currentIndex: _currentIndex,
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-              icon: Icon(Icons.web_asset), title: Text('资产')),
+              icon: Icon(Icons.web_asset, color: Colors.black),
+              title: Text('资产', style: TextStyle(color: Colors.black))),
           BottomNavigationBarItem(
-              icon: Icon(Icons.assessment), title: Text('行情')),
-          BottomNavigationBarItem(icon: Icon(Icons.search), title: Text('发现')),
-          BottomNavigationBarItem(icon: Icon(Icons.person), title: Text('我')),
+              icon: Icon(
+                Icons.person,
+                color: Colors.black,
+              ),
+              title: Text(
+                '我',
+                style: TextStyle(color: Colors.black),
+              )),
         ],
         onTap: (index) {
           setState(() {

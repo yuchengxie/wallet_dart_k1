@@ -13,7 +13,7 @@ class _AssetRecordPageState extends State<AssetRecordPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('NBC'),
-        // backgroundColor: Colors.cyan
+        backgroundColor: Colors.black
       ),
       body: BottomButton(),
     );
@@ -34,7 +34,7 @@ class BottomButton extends StatelessWidget {
               child: Container(
                 height: 50,
                 child: RaisedButton.icon(
-                  color: Colors.cyan,
+                  color: Colors.black,
                   textColor: Colors.white,
                   label: Text('转账'),
                   icon: Icon(Icons.face),
@@ -48,7 +48,7 @@ class BottomButton extends StatelessWidget {
               child: Container(
                 height: 50,
                 child: RaisedButton.icon(
-                  color: Colors.blue,
+                  color: Colors.black,
                   textColor: Colors.white,
                   label: Text('收款'),
                   icon: Icon(Icons.whatshot),

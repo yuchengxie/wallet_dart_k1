@@ -13,6 +13,7 @@ class _QRCodePageState extends State<QRCodePage> {
     return Scaffold(
         appBar: AppBar(
           title: Text('我的收款码'),
+          backgroundColor: Colors.black,
         ),
         body: Center(
           child: QrImage(

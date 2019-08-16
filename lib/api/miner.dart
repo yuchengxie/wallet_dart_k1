@@ -190,7 +190,7 @@ class PoetClient {
         print("发送写入链:${bytesToHexStr(msg_buf)}");
         this._sendMessage(msg_buf, this.PEER_ADDR_);
         print(
-            '${this.name} success mining:link=${link_no},height=${hi},sn=${sn},miner=${bytesToHexStr(succ_miner.pub_keyhash)}');
+            '====================================== /n ${this.name} success mining:link=${link_no},height=${hi},sn=${sn},miner=${bytesToHexStr(succ_miner.pub_keyhash)} /n ======================================');
         sleep(Duration(milliseconds: this.POET_POOL_HEARTBEAT));
       }
     }
